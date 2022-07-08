@@ -1,7 +1,14 @@
-{{page-title "EmberTodo"}}
+<header>
+  <nav>
+    <LinkTo @route="main">
+      <button type="button">Main</button>
+    </LinkTo>
+    <LinkTo @route="about">
+      <button type="button">About</button>
+    </LinkTo>
+  </nav>
+</header>
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<h1>Todo List</h1>
 
 {{outlet}}

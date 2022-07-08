@@ -1,0 +1,16 @@
+<div class="main-wrap">
+  <div>
+    <label for="create-todo"></label>
+    <input id="create-todo" type="text" oninput={{ action "updateName" }} placeholder="Todo name" maxlength="50"/>
+    <p style={{ this.color }}>{{this.name.length}} / 50</p>
+  </div>
+  <button type="button" class="button" onclick={{ action "addTodo" this.name}}>Create</button>
+</div>
+<label for="search-todo"></label>
+<input id="search-todo" class="search" oninput={{ action "search" }} type='text' placeholder='search...'/>
+{{#each this.todos as |todo index|}}
+<article class='todo-item'>
+  <span>{{ todo.name }}</span>
+  <span onclick={{ action "deleteTodo" index }}>X</span>
+</article>
+{{/each}}
