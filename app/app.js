@@ -9,6 +9,11 @@ export default class App extends Application {
   modulePrefix = config.modulePrefix;
   podModulePrefix = config.podModulePrefix;
   Resolver = Resolver;
+
+  init() {
+    super.init(...arguments);
+    if (window.location.pathname === '/') this.router.transitionTo('main');
+  }
 }
 
 loadInitializers(App, config.modulePrefix);
